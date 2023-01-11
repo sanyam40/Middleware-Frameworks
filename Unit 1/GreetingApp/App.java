@@ -1,9 +1,7 @@
+// --> SANYAM 21CSU234 
+
 package com.ncu.GreetingApp;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
@@ -11,7 +9,7 @@ public class App
     	/*
     	 * ---> THIS IS TIGHT COPULING
 		 * EnglishGreetingService eng = new EnglishGreetingService();
-		 * eng.greet("Sumit");
+		 * eng.greet("Sanyam");
 		 * 
 		 * FrenchGreetingService fre = new FrenchGreetingService(); fre.greet("Sanyam");
 		 * 
@@ -25,12 +23,12 @@ public class App
     	String name=sc.next();*/
     	
     	FactoryGreetingService factory = new FactoryGreetingService();
-    	Greeting_Service service = factory.greeting("eng");
+    	Greeting_Service service = factory.greeting("fre");
     	
     	service.greet("Sanyam");
     	
     	FactoryFortune_Service factory2=new FactoryFortune_Service();
-    	Fortune_Teller service2=factory2.Fortune("eng");
+    	Fortune_Teller service2=factory2.Fortune("fre");
     	service2.tellFortune();
     }
 }
