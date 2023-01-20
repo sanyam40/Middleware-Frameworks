@@ -1,18 +1,25 @@
 package com.ncu.Calculator;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Calculator {
-	public MathService Compute(String operation) {
-		if(operation=="add") {
-			return new AdditionService();
+	public void Compute(String operation, int x, int y) {
+		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("ApplicationContext.xml");
+		if(operation=="Add") {
+	    	MathService service=context.getBean("Add",MathService.class);
+	    	service.operate(x,y);
 		}
 		else if(operation=="sub") {
-			return new DivisionService();
+	    	MathService service=context.getBean("Sub",MathService.class);
+	    	service.operate(x,y);
 		}
         else if(operation=="mul") {
-        	return new MultiplicationService();
+	    	MathService service=context.getBean("Mul",MathService.class);
+	    	service.operate(x,y);
 		}
         else if(operation=="div") {
-        	return new DivisionService();
+	    	MathService service=context.getBean("Div",MathService.class);
+	    	service.operate(x,y);
 		}
         else {
 			throw new RuntimeException("Sorry, "+operation+" operation is not available!!");
@@ -20,10 +27,4 @@ public class Calculator {
 		
 		
 	}
-
-	public MathService operate(int i, int j) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

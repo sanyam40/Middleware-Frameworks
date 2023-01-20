@@ -21,5 +21,8 @@
     <bean id="Div" class="com.ncu.Calculator.DivisionService">
     </bean>
     
+    <bean id="Calc" class="com.ncu.Calculator.Calculator" >
+    </bean>
+    
     
 </beans>
