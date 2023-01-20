@@ -18,7 +18,16 @@
     <bean id="spanishGreeting" class="com.ncu.GreetingApp.SpanishGreeting_Service">
     </bean>
     
+    <!-- Fortune Service Beans -->
     
+    <bean id="engFortune" class="com.ncu.GreetingApp.English_Fortune">
+    </bean>
+    
+    <bean id="freFortune" class="com.ncu.GreetingApp.French_Fortune">
+    </bean>
+    
+    <bean id="spaFortune" class="com.ncu.GreetingApp.Spanish_Fortune">
+    </bean>
 </beans>
 
 

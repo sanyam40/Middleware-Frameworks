@@ -39,10 +39,15 @@ public class App
     	ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
     			
     	// Step 2 : Get the Desired Bean
-    	Greeting_Service service=context.getBean("spanishGreeting",Greeting_Service.class);
+    	Greeting_Service service=context.getBean("engGreeting",Greeting_Service.class);
+    	Fortune_Teller fortune=context.getBean("engFortune",Fortune_Teller.class);
     	
-    	// Step 3 : 
-    	service.greet("TANYA");
+    	// Step 3 : perform the desired operation
+    	//service.greet("TANYA");
     	service.greet("SANYAM");
+    	fortune.tellFortune();
+    	
+    	// Step 4: Close 
+    	context.close();
     }
 }
