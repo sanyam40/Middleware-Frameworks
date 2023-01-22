@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    <bean id="engGreeting" class="com.ncu.GreetingApp.EnglishGreeting_Service">
+    <constructor-arg ref="engFortune"></constructor-arg>
+    </bean>
+    
+    <bean id="frenchGreeting" class="com.ncu.GreetingApp.FrenchGreeting_Service">
+    <constructor-arg ref="freFortune"></constructor-arg>
+    </bean>
+    
+    <bean id="spanishGreeting" class="com.ncu.GreetingApp.SpanishGreeting_Service">
+    <constructor-arg ref="spaFortune"></constructor-arg>
+    </bean>
+    
+    <!-- Fortune Service Beans -->
+    
+    <bean id="engFortune" class="com.ncu.GreetingApp.English_Fortune">
+    </bean>
+    
+    <bean id="freFortune" class="com.ncu.GreetingApp.French_Fortune">
+    </bean>
+    
+    <bean id="spaFortune" class="com.ncu.GreetingApp.Spanish_Fortune">
+    </bean>
+</beans>
+
+
+
+
