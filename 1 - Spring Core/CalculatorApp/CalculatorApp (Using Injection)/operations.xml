@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    <bean id="oper" class="com.ncu.Calculator.CalculatorClass">
+    <constructor-arg ref="Addition"></constructor-arg>
+    <constructor-arg ref="Subtraction"></constructor-arg>
+    <constructor-arg ref="Division"></constructor-arg>
+    <constructor-arg ref="Multiply"></constructor-arg>
+    </bean>
+    
+    <bean id="Addition" class="com.ncu.Calculator.AdditionService">
+    </bean>
+    
+    <bean id="Subtraction" class="com.ncu.Calculator.SubtractionService">
+    </bean>
+    
+    <bean id="Multiply" class="com.ncu.Calculator.MultiplicationService">
+    </bean>
+    
+    <bean id="Division" class="com.ncu.Calculator.DivisionService">
+    </bean>
+
+</beans>
