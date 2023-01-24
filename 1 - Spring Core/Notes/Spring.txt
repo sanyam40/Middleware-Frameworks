@@ -1,5 +1,3 @@
-/* 
-
 --> SANYAM 21CSU234 FS-IV-A
 
 --> INTRODUCTION TO SPRING
@@ -85,4 +83,3 @@ v) Dependency injection: It helps in developing loosely coupled applications and
 vi) IoC containers: It creates and manages the lifecycle of the Spring beans.
 vii) Transaction management: It is used to maintain transactions and is mostly used to  maintain database transactions.
 
-*/
