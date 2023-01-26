@@ -1,0 +1,32 @@
+--> SANYAM 21CSU234 FS-IV-A
+
+--> Dependency Injection
+• Dependency injection is a technique in which an object receives other objects that it depends on, called dependencies. 
+• Typically, the receiving object is called a client and the passed-in ('injected') object is called a service. The code that passes the service to 
+the client is called the injector. The 'injection' refers to the passing of a dependency (a service) into the client that uses it.
+• Code is cleaner with the DI principle and decoupling is more effective when objects are provided with their dependencies. 
+
+Example of Greeting Service App : 
+• Greeting Service has some dependencies like EnglishGreetingService,FrenchGreetingService etc.
+• Instead of you, manually build the dependencies, Spring bean factory will do that work for you (developer)
+• Spring bean factory will give you objects of the dependencies, ready to use!
+• Now, we will also provide daily fortunes to people in their own language
+- New helper: FortuneService
+- This is a dependency of GreetingService
+
+● In Spring, you can perform Dependency Injectionin three ways:
+1) Constructor injection
+2) Setter or Method injection
+3) Field or Property injection
+
+--> Constructor Injection : 
+• Constructor Based Dependency Injection is the one in which the wiring between beans is achieved using constructors. 
+• When such a dependency injection is performed, the container invokes a constructor with one or more arguments, each representing a dependency.
+• In this we can inject :-
+i. Dependency object (contained object)
+ii. Primitive and String-based values
+
+• Constructor Injection - Process : 
+1) Define the dependency interface and class
+2) Create a constructor in your class for injections
+3) Configure the dependency injection in Spring config file (applicationContext.XML)
