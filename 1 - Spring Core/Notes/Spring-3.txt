@@ -84,3 +84,69 @@ example : public class App {
     	context.close();
     }
 }     
+
+--> Setter Injection : 
+• Setter based dependency injection is one of the ways spring allows to do DI.
+• As setters let us update object properties after its creation, this behavior is a perfect candidate to add optional dependencies in a Spring IoC container.
+• Setter injection is done by injecting dependencies into the setter methods of your class 
+• Setter injection plays an alternative when constructor injection is not required or not possible
+• For instance, satisfying all dependencies at the constructor will slow down the application. But if we could initialize the required dependencies, setters will help to inject optional dependencies. 
+
+• Setter Injection - Process
+1. Create Setter method(s) in your class for injections
+example : 
+         // creating setter method for injection
+         public void setForService(FortuneService fortuneService){
+            this.fortuneService=fortuneService;
+         }
+     
+2. Configure the dependency injection in Spring config file.
+example : 
+        <bean id="engGreeting" class="com.ncu.GreetingApp.EnglishGreeting_Service">
+        <property name="ForService" ref="engFortune"></property>
+        </bean>
+
+        <bean id="engFortune" class="com.ncu.GreetingApp.English_Fortune">
+        </bean>
+
+
+--> Field or Property Injection :  
+• In this type of Dependency Injection, Spring assigns the dependencies directly to the class fields.
+• The interesting thing to understand is, Spring injects the dependencies, even if the field is private. 
+• Spring uses Java Reflections to do so. Hence it is called unsafe by many of the experts.  
+
+• Field Injection - Process :
+1. Declare fields in your class
+  // classFields
+  private String name;
+  private String addresss;
+
+2. Create getters and setters in your class 
+  public void setName(String name){
+    this.name=name;
+  }
+  public void setaddress(String address){
+    this.address=address;
+  }
+• Setters for injection & Getters for fetching the values
+
+3. Configure the injection in Spring config file
+<bean id="myspa" class="org.ncu.Spanish">
+<property name="name" value="sanyam"></property>
+<property name="address" value="sbc"></property>
+</bean>
+
+--> Injecting values using Property File
+• Follow the steps below:
+1. Create Properties file – field.properties
+name=sanyam
+address=abc
+
+2. Load properties file in Spring config file
+<context:property-placeholder loction="classpth:filed.properties"/>
+
+3. Reference values from Properties file
+<bean id="myspa" class="org.ncu.Spanish">
+<property name="name" value="${name}"></property>
+<property name="address" value="${address}"></property>
+</bean>
