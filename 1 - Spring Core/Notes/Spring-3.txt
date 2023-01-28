@@ -28,5 +28,59 @@ ii. Primitive and String-based values
 
 • Constructor Injection - Process : 
 1) Define the dependency interface and class
+example : 
+       // helper service
+       public interface FortuneService(){
+           public String getFortune();
+       }
+       //dependency
+       public class EnglishFortuneService implements FortuneService{
+           public String getFortune(){
+            return "abc";
+           }
+       }
+
 2) Create a constructor in your class for injections
+example : 
+         //dependency
+       public class EnglishFortuneService implements FortuneService{
+          // Helper Service
+           private FortuneService fortuneService;
+           //Constructor
+           public EnglishFortuneService(FortuneService fortuneService){
+            this.fortuneService=fortuneService;
+           }
+           public String getFortune(){
+            return "abc";
+           }
+       }
+       
 3) Configure the dependency injection in Spring config file (applicationContext.XML)
+example :
+        <bean id="engGreeting" class="com.ncu.GreetingApp.EnglishGreeting_Service">
+        <constructor-arg ref="engFortune"></constructor-arg>
+        </bean>
+
+        <bean id="engFortune" class="com.ncu.GreetingApp.English_Fortune">
+        </bean>
+
+• In your main class – request the Greeting Service bean from Spring container and invoke greet() and getDailyFortune().   
+example : public class App {
+    public static void main( String[] args ){
+    	// --> SPRING CODE - Dependency Injection
+    	
+    	// Step 1 : Initialize the Spring Container
+    	ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+    			
+    	// Step 2 : Get the Desired Bean
+    	Greeting_Service service=context.getBean("spanishGreeting",Greeting_Service.class);
+    	
+    	// Step 3 : perform the desired operation
+    	service.greet("SANYAM");
+    	
+    	System.out.println(service.getDFortune());
+    	
+    	// Step 4: Close 
+    	context.close();
+    }
+}     
