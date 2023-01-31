@@ -1,3 +1,5 @@
+// DATE : 31/01/23
+
 package com.ncu.CalculatorAppT;
 
 import org.springframework.context.annotation.Bean;
@@ -5,11 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class CalculatorConfig {
-	
-	/*
-	 * @Bean Calculator calc() { return new Calculator(Add(), Sub(), Multiply(),
-	 * Divide()); }
-	 */
 	
 	@Bean
 	Calculator calc() {

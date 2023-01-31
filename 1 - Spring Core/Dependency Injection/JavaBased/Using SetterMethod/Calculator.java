@@ -4,26 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-//@Component
 public class Calculator {
-	
-	//public MathService Add, Sub, Multiply, Divide;
 	
 	MathService Add;
 	MathService Sub;
 	MathService Multiply;
 	MathService Divide;
-	
-	
-	/*
-	 * @Autowired public Calculator(@Qualifier("additionService") MathService
-	 * Add, @Qualifier("subtractionService") MathService
-	 * Sub, @Qualifier("multiplicationService") MathService
-	 * Multiply, @Qualifier("divisionService") MathService Divide) { this.Add = Add;
-	 * this.Sub = Sub; this.Multiply = Multiply; this.Divide = Divide; }
-	 */
-	 
-	
 	
 	  @Autowired
 	  @Qualifier ("Add") void setAdditionService(MathService Add) {
@@ -48,8 +34,6 @@ public class Calculator {
 		  this.Divide=Divide; 
 		  }
 	 
-	
-	
 	public void compute(int x, int y, String Op) {
 		if(Op=="Add") {
 			 this.Add.operate(x, y);
@@ -66,12 +50,9 @@ public class Calculator {
 		else if (Op=="Devide") {
 			this.Divide.operate(x, y);	
 		}
-		
-		
 		else {
 			throw new RuntimeException ("SORRY, "+Op+" function not found. Enter 'Add', 'Subtract', 'Mutiply' or 'Divide' ");
 		
 		}	
-
 	}
 }
