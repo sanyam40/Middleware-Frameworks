@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+//--> @Component Annotation only used in Annotation based not java based
+// @Component
 public class DegreeClass {
 	
 	private MasterDegree CSEMasters;
