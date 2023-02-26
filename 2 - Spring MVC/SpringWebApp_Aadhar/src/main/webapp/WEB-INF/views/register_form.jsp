@@ -12,7 +12,7 @@
 
 	<hr>
 	<br>
-	<form:form action="AddData" method="post" modelAttribute="user">
+	<form:form action="display" method="post" modelAttribute="user">
 
 		<label for="name">User Name</label>
 		<form:input type="text" path="username" />

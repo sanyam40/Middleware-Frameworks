@@ -34,6 +34,7 @@ public class UserController {
 		return "Display-form";
 	}
 	
+	/*
 	@RequestMapping(value="/AddData",method=RequestMethod.POST)
 	public String Add(@ModelAttribute User user) throws ClassNotFoundException, SQLException {
 		CredController cred=new CredController();
@@ -46,5 +47,5 @@ public class UserController {
 		CredController cred=new CredController();
 		cred.loadUsers(user);
 		return "Display-Data";
-	}
+	}*/
 }

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class CredController {
 	
 	
-	public void Add(@ModelAttribute User user) throws ClassNotFoundException, SQLException {
+	/*public void Add(@ModelAttribute User user) throws ClassNotFoundException, SQLException {
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/aadhardetails","root","0721");
@@ -66,5 +66,5 @@ public class CredController {
         }
         System.out.println(UserList);
         return UserList;
-	}
+	}*/
 }
