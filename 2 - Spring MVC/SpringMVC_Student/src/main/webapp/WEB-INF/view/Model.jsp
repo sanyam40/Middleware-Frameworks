@@ -33,8 +33,37 @@ ${Namee}
 <h1>${item}</h1>
 </c:forEach>
 
+
 <br>
 <br>
+<p>
+/* --> SENDING DATA FROM CONTROLLER TO VIEW<br>
+	       METHOD 1 : MODEL <br>
+	       METHOD 2 : MODELANDVIEW<br>
+	*/<br>
+	<br>
+	@RequestMapping(value="/Model")<br>
+	public String Model(Model model) {<br>
+		model.addAttribute("Name","SANYAM");<br>
+		return"Model";<br>
+	}<br>
+	<br>
+	@RequestMapping(value="/Model-View")<br>
+	public ModelAndView Model_View() {<br>
+		ModelAndView modelandview=new ModelAndView();<br>
+		<br>
+		modelandview.addObject("Namee", "SANYAM NARANG");<br>
+		List<Integer> list=new ArrayList<Integer>();<br>
+		list.add(45);<br>
+		list.add(89);<br>
+		
+		modelandview.addObject("marks", list);<br>
+		<br>
+		// TO SET THE JSP PAGE<br>
+		modelandview.setViewName("Model");<br>
+		<br>
+		return modelandview;<br>
+		</p>
 
 </body>
 </html>

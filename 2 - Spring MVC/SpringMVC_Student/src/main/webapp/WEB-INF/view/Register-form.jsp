@@ -84,6 +84,7 @@
 		<form:form action="Display-Data" method="post" modelAttribute="student">
 		<label for="name">Name :</label>
 		<form:input type="text" path="name" />
+		<form:errors path="name" cssClass="error"/>
 		<br>
 		<br>
 		<label for="rollno">Roll No</label>

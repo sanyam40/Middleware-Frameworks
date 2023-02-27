@@ -1,8 +1,11 @@
 package com.Spring.entity;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
-	private String name;
-	private String rollno;
+	@Size(min=1,message="required")private String name;@NotNull
+	private String rollno;@NotNull
 	
 	public String getName() {
 		return name;
