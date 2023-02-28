@@ -76,6 +76,9 @@
 		.link:hover {
 			color: #4CAF50;
 		}
+		.error{
+		color:red
+		}
 	</style>
 </head>
 <body>
@@ -89,6 +92,7 @@
 		<br>
 		<label for="rollno">Roll No</label>
 		<form:input type="text" path="rollno" />
+		<form:errors path="rollno" cssClass="error"></form:errors>
 		<br>
 		<br>
 		<input type="submit" value="submit" />

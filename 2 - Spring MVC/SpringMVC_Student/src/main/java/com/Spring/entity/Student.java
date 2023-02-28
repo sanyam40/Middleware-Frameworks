@@ -3,8 +3,12 @@ package com.Spring.entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.Spring.Validation.rollno;
+
 public class Student {
 	@Size(min=1,message="required")private String name;@NotNull
+	
+	@rollno
 	private String rollno;@NotNull
 	
 	public String getName() {

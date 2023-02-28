@@ -6,6 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Aadhar Registration Form</title>
+<style>
+.error{
+ color:red
+ }
+</style>
 </head>
 <body>
 	<h2>Aadhar Verification Registration Form</h2>
@@ -15,11 +20,13 @@
 	<form:form action="display" method="post" modelAttribute="user">
 
 		<label for="name">User Name</label>
-		<form:input type="text" path="username" />
+		<form:input type="text" path="username" placeholder="enter your name"/>
+		<form:errors path="username" cssClass="error"></form:errors>
 		<br>
 		<br>
 		<label for="password">Password</label>
 		<form:input type="password" path="userpassword" />
+		<form:errors path="userpassword" cssClass="error"></form:errors>
 		<br>
 		<br>
 		<label for="id">Aadhar ID</label>

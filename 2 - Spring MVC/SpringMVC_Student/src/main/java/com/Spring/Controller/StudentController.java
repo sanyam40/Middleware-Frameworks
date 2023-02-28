@@ -3,6 +3,7 @@ package com.Spring.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.ncu.SpringWebAppDemo.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,7 +27,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value="/Display-Data",method=RequestMethod.POST)
-	public String details(@ModelAttribute("student")Student student,HttpServletRequest request,@RequestParam("name")String namee) {
+	public String details(@ModelAttribute("student")Student student,HttpServletRequest request,@RequestParam("name")String namee,@Valid @ModelAttribute("student")Student studentt,BindingResult bindingresult) {
 		/* 3 METHODS TO FETCH DATA :
 		 * 1- HttpServletRequest
 		 * 2- @Requestparam
@@ -38,17 +39,11 @@ public class StudentController {
 		System.out.println(namee);
 		
 		System.out.println(student.getRollno());
-		
-		return "Display-Data";
-	}
-	
-	/*@RequestMapping("/hello")
-	public String submitForm(@Valid @ModelAttribute("student")Student student,BindingResult br) {
-		if(br.hasErrors()) {
-			return "Display-Data";
+		if(bindingresult.hasErrors()) {
+			return "Register-form";
 		}
 		else {
-			return "errorpage";
+			return "Display-Data";
 		}
-	}*/
+	}
 }

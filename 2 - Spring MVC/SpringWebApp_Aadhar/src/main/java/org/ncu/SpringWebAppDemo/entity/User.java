@@ -2,10 +2,21 @@ package org.ncu.SpringWebAppDemo.entity;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class User {
+	@NotNull(message="is required")
+	@Size(min=2,message="is required")
 	private String username;
+	
+	@NotNull(message="is required")
+	@Pattern(regexp="^[a-zzA-Z0-9]{5,}",message="only char/digit allowed")
 	private String userpassword;
-	private String aadharId;
+	
+	@NotNull
+	private String aadharId; 
 	private String state;
 	private String gender;
 	private List<String> otheroptions;
@@ -13,6 +24,7 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -22,12 +34,15 @@ public class User {
 	public void setUserpassword(String userpassword) {
 		this.userpassword = userpassword;
 	}
+	
 	public String getAadharId() {
 		return aadharId;
 	}
 	public void setAadharId(String aadharId) {
 		this.aadharId = aadharId;
 	}
+	
+	
 	public String getState() {
 		return state;
 	}
@@ -52,6 +67,8 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", userpassword=" + userpassword + ", aadharId=" + aadharId + ", state="
