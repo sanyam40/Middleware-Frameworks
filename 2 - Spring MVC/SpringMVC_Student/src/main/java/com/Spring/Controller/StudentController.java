@@ -3,7 +3,6 @@ package com.Spring.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import org.ncu.SpringWebAppDemo.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;

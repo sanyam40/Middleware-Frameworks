@@ -24,13 +24,24 @@
 		<form:errors path="username" cssClass="error"></form:errors>
 		<br>
 		<br>
-		<label for="password">Password</label>
-		<form:input type="password" path="userpassword" />
-		<form:errors path="userpassword" cssClass="error"></form:errors>
+		<label for="aadharId">AadharId</label>
+		<form:input type="text" path="aadharId" placeholder="enter your AadharId"/>
+		<form:errors path="aadharId" cssClass="error"></form:errors>
 		<br>
 		<br>
-		<label for="id">Aadhar ID</label>
-		<form:input type="text" path="aadharId" />
+		<label for="email">email</label>
+		<form:input type="text" path="email" placeholder="enter your email"/>
+		<form:errors path="email" cssClass="error"></form:errors>
+		<br>
+		<br>
+		<label for="dob">DOB</label>
+		<form:input type="date" path="dob" />
+		<form:errors path="dob" cssClass="error"></form:errors>
+		<br>
+		<br>
+		<label for="phnno">PhnNo</label>
+		<form:input type="text" path="phnno" />
+		<form:errors path="phnno" cssClass="error"></form:errors>
 		<br>
 		<br>
 		<label>Enter State:</label>
@@ -40,19 +51,23 @@
 			<form:option value="HR" label="Haryana" />
 			<form:option value="MH" label="Maharashtra" />
 			<form:option value="PB" label="Punjab" />
+			<form:errors path="state" cssClass="error"></form:errors>
 		</form:select>
 		<br>
 		<br>
 		<label>Gender: </label>
 		Male<form:radiobutton path="Gender" value="Male" />  
         Female<form:radiobutton path="Gender" value="Female" />
+        <form:errors path="Gender" cssClass="error"></form:errors>
 		<br>
 		<br>
 		<label>Other Verification Options: </label>
 		PAN<form:checkbox path="otheroptions" value="PAN" />  
         Driving License<form:checkbox path="otheroptions"
 			value="Driving License" />  
-        Voter Id<form:checkbox path="otheroptions" value="Voter Id" />
+        Voter Id
+        <form:errors path="otheroptions" cssClass="error"></form:errors>
+        <form:checkbox path="otheroptions" value="Voter Id" />
 		<br>
 		<br>
 
@@ -61,7 +76,12 @@
 		<form:textarea path="address" rows="5" cols="30" />
 		<br>
 		<br>
-
+		<br>
+		<label for="userpassword">UserPassword</label>
+		<form:input type="text" path="userpassword" placeholder="enter your Password"/>
+		<form:errors path="userpassword" cssClass="error"></form:errors>
+		<br>
+		<br>
 		<input type="submit" value="submit" />
 		<input type="reset" value="clear" />
 	</form:form>

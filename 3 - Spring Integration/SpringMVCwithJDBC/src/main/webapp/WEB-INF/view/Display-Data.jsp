@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page isELIgnored="false" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Display_Details</title>
-<style>
+	<title>My Website</title>
+	<style>
 		body {
 			background-color: #f2f2f2;
 			font-family: Arial, sans-serif;
@@ -45,29 +46,20 @@
 			color: #4CAF50;
 		}
 	</style>
-
 </head>
 <body>
-<h2>ENTERED DETAILS ARE : </h2>
-<hr>
-<br>
-<h1>ENTERED DETAILS ARE :</h1>
+	<div class="container">
+		<h1>ENTERED DETAILS ARE :</h1>
 		<hr>
-		<h3>Name : ${user.username}</h3>
-		<h3>AadharId : ${user.aadharId}</h3>
-		<h3>Email :${user.email}</h3>
-		<h3>DOB:${user.dob}</h3>
-		<h3>PhnNo:${user.phnno}</h3>
-		<h3>State:${user.state}</h3>
-		<h3>Gender:${user.gender}</h3>
-		<h3>OtherOptions:${user.otheroptions}</h3>
-		<h3>AddressDetails:${user.address}</h3>
-		<h3>userpassword:${user.userpassword}</h3>
+		<h3>Name : ${student.name}</h3>
+		<h3>RollNo : ${student.rollno}</h3>
+		<h3>PhnNo :${student.phnno}</h3>
+		<h3>CourseCode:${student.coursecode}</h3>
 		<br>
 		<hr>
-<a href="home">HOME PAGE</a>
-<br>
-<a href="DisplayData">DISPLAY ALL THE DATA</a>
-
+		<h1>DETAILS ARE SAVED IN DATABASE</h1>
+		<a href="home">HOME PAGE</a>
+	</div>
 </body>
 </html>
+    
