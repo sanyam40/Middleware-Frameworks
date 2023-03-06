@@ -44,5 +44,12 @@ public class StudentDaoImpl implements StudentDao{
 	public void deleteStudent(String rollno) {
 		String sql = "delete from studentdetails where rollno = ?";
 		jdbcTemplate.update(sql, rollno);
-	}	
+	}
+	
+	public int updateRecord(Student std) {
+		String sql = "update studentdetails set name = ?, phnno=?,coursecode=? where rollno = ?";
+		Object[] args = {std.getName(), std.getPhnno(), std.getCoursecode(),std.getRollno()};
+		int recordsUpdated = jdbcTemplate.update(sql, args);
+		return recordsUpdated;
+	}
 }

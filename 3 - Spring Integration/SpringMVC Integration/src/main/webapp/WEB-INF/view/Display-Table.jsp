@@ -64,7 +64,7 @@
       <td>${item.phnno}</td>
       <td>${item.coursecode}</td>
       <td>
-      <a href="">Edit</a>
+      <a href="updateForm?rollno=${item.rollno}">Edit</a>
       <a href="deleteStudent?rollno=${item.rollno}">Delete</a>
       </td>
     </tr>

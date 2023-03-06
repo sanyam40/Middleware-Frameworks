@@ -1,9 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration Form</title>
-	<style>
+<meta charset="ISO-8859-1">
+<title>Update Form</title>
+<style>
 		body {
 			background-color: #f2f2f2;
 			font-family: Arial, sans-serif;
@@ -80,37 +83,34 @@
 		color:red
 		}
 	</style>
+
 </head>
 <body>
-	<div class="container">
-	<div align="center">
-		<h1>Registration Form</h1>
-		<form:form action="Submit-form" method="post" modelAttribute="student">
-		<label for="name">Name</label>
-		<form:input type="text" path="name" />
-		<form:errors path="name" cssClass="error"/>
+<div class="container">
+		<h2>Student Update Form</h2>
 		<br>
-		<br>
-		<label for="rollno">RollNo</label>
-		<form:input type="text" path="rollno" />
-		<form:errors path="rollno" cssClass="error"></form:errors>
-		<br>
-		<br>
-		<label for="phnno">PhnNo</label>
-		<form:input type="text" path="phnno" />
-		<form:errors path="phnno" cssClass="error"></form:errors>
-		<br>
-		<br>
-		<label for="coursecode">CourseCode</label>
-		<form:input type="text" path="coursecode" />
-		<form:errors path="coursecode" cssClass="error"></form:errors>
-		<input type="submit" value="submit" />
-		<input type="reset" value="clear" />
-	</form:form>
-	<br>
-	<a href="home">HOME PAGE</a>
-	<br>
-	</div>
+		<hr>
+		<form:form action="processUpdate" method="post" modelAttribute="student">
+			<label for="rollno">RollNo</label>
+			<form:input type="text" path="rollno" readonly="true"/>
+			<br>
+			<br>
+			<label for="name">Student Name</label>
+			<form:input type="text" path="name" placeholder="Name"/>
+			<br>
+			<br>
+			<label for="phnno">Student Phnno</label>
+			<form:input type="text" path="phnno" placeholder="PhnNo"/>
+			<br>
+			<br>
+			<label for="coursecode">Student Coursecode</label>
+			<form:input type="text" path="coursecode" placeholder="CourseCode"/>
+			<br>
+			<br>
+			<input type="submit" value="submit" />
+			<input type="reset" value="clear" />
+		</form:form>
+		<hr>
 	</div>
 </body>
 </html>

@@ -59,7 +59,6 @@
 		<nav>
 			<a href="Register-form">Register Form</a>
 			<a href="ShowStudent">Display Records</a>
-			<a href="">Edit/Delete Records</a>
 		</nav>
 	</div>
 </body>

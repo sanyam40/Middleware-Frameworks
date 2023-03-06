@@ -16,4 +16,7 @@ public interface StudentDao {
 	
 	// method to delete a student record from the database
 	public void deleteStudent(String rollno);
+	
+	
+	public int updateRecord(Student std);
 }
