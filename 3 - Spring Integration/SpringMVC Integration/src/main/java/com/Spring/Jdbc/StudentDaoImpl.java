@@ -1,0 +1,48 @@
+package com.Spring.Jdbc;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.Spring.entity.Student;
+
+public class StudentDaoImpl implements StudentDao{
+
+	@Autowired	
+	private JdbcTemplate jdbcTemplate;
+		
+		public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
+	
+	// method for adding a record into the database
+	public void insert(Student student) {
+		String query="insert into studentdetails(name,rollno,phnno,coursecode)values(?,?,?,?)";
+		int r=this.jdbcTemplate.update(query,student.getName(),student.getRollno(),student.getPhnno(),student.getCoursecode());
+		System.out.print(r);
+	}
+	
+	
+	// method for fetching all the student records from the database
+	public List<Student>Display_Table(){
+		List<Student>list=new ArrayList<>();
+		String query="select * from studentdetails";
+		list=jdbcTemplate.query(query,new BeanPropertyRowMapper<Student>(Student.class));
+		return list;
+	}
+
+	
+	// method to delete a student record from the database
+	public void deleteStudent(String rollno) {
+		String sql = "delete from studentdetails where rollno = ?";
+		jdbcTemplate.update(sql, rollno);
+	}	
+}
