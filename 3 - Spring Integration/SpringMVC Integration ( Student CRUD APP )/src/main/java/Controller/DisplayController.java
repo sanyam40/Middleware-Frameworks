@@ -1,3 +1,5 @@
+// --> SANYAM 21CSU234
+
 package com.Spring.Controller;
 
 import java.util.List;
@@ -13,10 +15,14 @@ import com.Spring.entity.Student;
 @Controller
 public class DisplayController {
 	
-	public static ApplicationContext context=new ClassPathXmlApplicationContext("com/Spring/Jdbc/Config.xml");
-    public static StudentDao studentdao=context.getBean("studentDao",StudentDao.class);
-    
-    
+	// --> USING XML CONFIGURATION FOR JDBC 
+		public static ApplicationContext context=new ClassPathXmlApplicationContext("com/Spring/Jdbc/Config.xml");
+	    public static StudentDao studentdao=context.getBean("studentDao",StudentDao.class);
+		
+		/* --> USING JAVA BASED CONFIGURATION FOR JDBC
+		static ApplicationContext context=new AnnotationConfigApplicationContext("JdbcConfig.class");
+		public static StudentDaoImpl studentdao=context.getBean("studentdao",StudentDaoImpl.class);
+		*/
     
 	//* Controller mapping for showing the student list dashboard */	
 	@GetMapping("/ShowStudent")

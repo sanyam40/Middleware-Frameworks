@@ -2,6 +2,7 @@ package com.Spring.Jdbc;
 
 import java.util.List;
 
+import com.Spring.entity.Admin;
 import com.Spring.entity.Student;
 
 public interface StudentDao {
@@ -19,4 +20,6 @@ public interface StudentDao {
 	
 	
 	public int updateRecord(Student std);
+	
+	public List<Admin> login(String username,String password);
 }

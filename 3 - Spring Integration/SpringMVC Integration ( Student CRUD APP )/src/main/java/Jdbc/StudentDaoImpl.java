@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.Spring.entity.Admin;
 import com.Spring.entity.Student;
 
 public class StudentDaoImpl implements StudentDao{
@@ -52,4 +53,13 @@ public class StudentDaoImpl implements StudentDao{
 		int recordsUpdated = jdbcTemplate.update(sql, args);
 		return recordsUpdated;
 	}
+	
+	// method for fetching all the student records from the database from login table
+		@SuppressWarnings("deprecation")
+		public List<Admin> login(String username,String password){
+			List<Admin>list=new ArrayList<>();
+			String query="select username,password from logindetails where username=? and password=?";
+			list=jdbcTemplate.query(query, new Object[] {username,password},new AdminRowMapper());
+			return list;			
+		}
 }

@@ -58,7 +58,7 @@
 		<h1>Student Records</h1>
 		<nav>
 			<a href="Register-form">Register Form</a>
-			<a href="ShowStudent">Display Records</a>
+			<a href="Admin-login">Admin-Login</a>
 		</nav>
 	</div>
 </body>
