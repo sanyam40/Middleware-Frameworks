@@ -5,4 +5,4 @@ Topics Covered are :
 - Spring Core
 - Spring MVC
 - Spring Integration ( JdbcTemplate )
-- Hibernate Basics
+- Spring AOP ( Aspect Oriented Programming )
