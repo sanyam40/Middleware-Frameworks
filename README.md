@@ -1,6 +1,6 @@
 # Middleware-Frameworks
 
-This repository contains codebase for all the topics covered in the Middleware Frameworks course (MFW).
+This repository contains a codebase for all the topics covered in the Spring Framework.
 Topics Covered are :
 - Spring Core
 - Spring MVC
