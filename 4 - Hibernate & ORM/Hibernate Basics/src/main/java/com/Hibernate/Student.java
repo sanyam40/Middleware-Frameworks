@@ -6,15 +6,8 @@ import javax.persistence.Id;
 /*
   
  @Entity --> It is used to mark class as entity. 
- @Entity(name="student_details") --> To Change Table Name.
- @Table(name="mystudents") --> It is used to change table details.
  @Id --> It is use to mark column as primary key. 
- @GeneratedValue -->Hibernate will automatically generate values.
- @Column --> can be used to specify column mappings.
- @Transient --> this tells hibernate not to save this field.
- @Temporal --> Format in which date to be saved
- @Lob --> this tells this is a large object.
- 
+
 */
 
 @Entity 

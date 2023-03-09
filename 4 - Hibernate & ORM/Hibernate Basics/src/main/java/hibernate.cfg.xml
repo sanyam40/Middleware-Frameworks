@@ -16,6 +16,7 @@
     <property name="format_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
     <mapping  class="com.Hibernate.Student"/>
+    <mapping  class="com.Hibernate.Address"/>
     
   </session-factory>
   
