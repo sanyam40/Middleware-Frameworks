@@ -1,8 +1,10 @@
-package com.Hibernate;
+package com.Hibernate.demo;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+import com.Hibernate.entity.Student;
 
 public class FetchDemo {
 	

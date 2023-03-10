@@ -14,9 +14,15 @@
     <property name="connection.password">0721</property>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
-    <property name="hbm2ddl.auto">update</property>
-    <mapping  class="com.Hibernate.Student"/>
-    <mapping  class="com.Hibernate.Address"/>
+    <property name="hbm2ddl.auto">create</property>
+    
+    <mapping  class="com.Hibernate.entity.Student"/>
+    <mapping  class="com.Hibernate.entity.Address"/>
+    <mapping  class="com.Hibernate.OneToOne.Question"/>
+    <mapping  class="com.Hibernate.OneToOne.Answer"/>
+     <mapping  class="com.Hibernate.OneToMany.Question"/>
+    <mapping  class="com.Hibernate.OneToMany.Answer"/>
+    
     
   </session-factory>
   

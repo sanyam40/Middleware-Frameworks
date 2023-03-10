@@ -1,4 +1,4 @@
-package com.Hibernate;
+package com.Hibernate.entity;
 
 import java.util.Date;
 

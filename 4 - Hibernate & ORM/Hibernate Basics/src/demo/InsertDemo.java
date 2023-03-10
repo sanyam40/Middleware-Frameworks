@@ -1,12 +1,15 @@
 // --> SANYAM 21CSU234
 
-package com.Hibernate;
+package com.Hibernate.demo;
 
 import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+import com.Hibernate.entity.Address;
+import com.Hibernate.entity.Student;
 
 public class InsertDemo {
     public static void main( String[] args ){
