@@ -43,6 +43,12 @@ public class MappingDemo {
     	session.save(ans2);
     	
     	session.getTransaction().commit();
+    	
+    	
+    	Question q=(Question)session.get(Question.class, 123);
+    	System.out.println(q.getQuestionId());
+    	System.out.println(q.getQuestion());
+    	System.out.println(q.getAnswer().size());
 		
 		session.close();
 	}

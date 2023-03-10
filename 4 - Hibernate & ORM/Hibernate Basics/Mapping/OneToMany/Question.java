@@ -1,10 +1,11 @@
 package com.Hibernate.OneToMany;
 
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity(name="question_2")
@@ -15,8 +16,8 @@ public class Question {
 	private int questionId;
 	private String question;
 	
-	@OneToMany(mappedBy="question")
-	@JoinColumn(name="a_id")
+	@OneToMany(mappedBy="question",fetch=FetchType.EAGER/*,fetch=FetchType.LAZY*/)
+	//@JoinColumn(name="a_id")
 	private List<Answer> answer;
 	
 
