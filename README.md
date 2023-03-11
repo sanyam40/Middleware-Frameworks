@@ -5,6 +5,6 @@ Topics Covered are :
 - Spring Core
 - Spring MVC 
 - Spring JDBC ( JdbcTemplate )
-- Spring JPA (Java Persistence API )
+- Spring JPA ( Java Persistence API )
 - Hibernate ORM ( Object-relational mapping )
 - Spring AOP ( Aspect Oriented Programming )
