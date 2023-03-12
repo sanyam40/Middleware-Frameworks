@@ -14,7 +14,9 @@
     <property name="connection.password">0721</property>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
-    <property name="hbm2ddl.auto">create</property>
+    <property name="hbm2ddl.auto">update</property>
+    <property name="cache.use_second_Level_cache">true</property>
+    <property name="cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</property>
     
     <mapping  class="com.Hibernate.entity.Student"/>
     <mapping  class="com.Hibernate.entity.Address"/>
