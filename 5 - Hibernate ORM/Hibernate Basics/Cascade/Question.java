@@ -2,6 +2,7 @@ package com.Hibernate.OneToMany;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,7 +17,7 @@ public class Question {
 	private int questionId;
 	private String question;
 	
-	@OneToMany(mappedBy="question",fetch=FetchType.EAGER/*,fetch=FetchType.LAZY*/)
+	@OneToMany(mappedBy="question",fetch=FetchType.EAGER/*,fetch=FetchType.LAZY*/,cascade=CascadeType.ALL)
 	//@JoinColumn(name="a_id")
 	private List<Answer> answer;
 	
