@@ -12,6 +12,9 @@
         <h1>Hello World!</h1>
         <p>This is the homepage!</p>
         <a href="register">REGISTER FORM</a>
+        <br>
+        <br>
+        <a href="display-records">Show Employee Records</a>
         </div>
     </body>
 </html>

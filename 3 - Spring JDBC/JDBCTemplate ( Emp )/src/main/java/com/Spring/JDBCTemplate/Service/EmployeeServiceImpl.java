@@ -27,15 +27,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public int updateRecord(int empId) {
+	public int updateRecord(Employee emp) {
 		// TODO Auto-generated method stub
-		return 0;
+		int r=employeeDao.updateEmployee(emp);
+		return r;
 	}
 
 	@Override
-	public int deleteRecord(int empId) {
+	public int deleteRecord(String empId) {
 		// TODO Auto-generated method stub
-		return 0;
+		int r=employeeDao.deleteEmployee(empId);
+		return r;
 	}
 
 	@Override
@@ -47,7 +49,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> loadEmployees() {
 		// TODO Auto-generated method stub
-		return null;
+		List<Employee>list=employeeDao.getEmployeeRecords();
+		System.out.println(list+" AT SERVICE LAYER");
+		return list;
 	}
 
 }

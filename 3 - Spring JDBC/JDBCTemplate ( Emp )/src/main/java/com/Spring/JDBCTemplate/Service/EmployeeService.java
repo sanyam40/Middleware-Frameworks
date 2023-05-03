@@ -7,8 +7,8 @@ import com.Spring.JDBCTemplate.entity.Employee;
 public interface EmployeeService {
 	
 	public String createRecord(Employee emp);
-	public int updateRecord(int empId);
-	public int deleteRecord(int empId);
+	public int updateRecord(Employee emp);
+	public int deleteRecord(String empId);
 	public Employee fetchEmployee(int empId);
 	public List<Employee> loadEmployees();
 

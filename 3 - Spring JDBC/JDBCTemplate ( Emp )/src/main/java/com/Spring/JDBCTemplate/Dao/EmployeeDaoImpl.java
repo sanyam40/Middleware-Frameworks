@@ -1,8 +1,10 @@
 package com.Spring.JDBCTemplate.Dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -23,15 +25,20 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public int deleteEmployee(int empId) {
+	public int deleteEmployee(String empId) {
 		// TODO Auto-generated method stub
-		return 0;
+		String aString="delete from employee where emp_id=?";
+		int r=jdbcTemplate.update(aString,empId);
+		return r;
 	}
 
 	@Override
-	public int updateEmployee(int empId) {
+	public int updateEmployee(Employee emp) {
 		// TODO Auto-generated method stub
-		return 0;
+		String queryString="update employee set emp_name=?,emp_salary=?,emp_address=? where emp_id=?";
+		Object[]argsObjects= {emp.getEmp_name(),emp.getEmp_salary(),emp.getEmp_address(),emp.getEmp_id()};
+		int r=jdbcTemplate.update(queryString,argsObjects);
+		return r;
 	}
 
 	@Override
@@ -43,7 +50,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public List<Employee> getEmployeeRecords() {
 		// TODO Auto-generated method stub
-		return null;
+		String queryString="select * from employee";
+		
+		List<Employee>list=new ArrayList<>();
+		System.out.println(list+" AT DAO LAYER");
+		list=jdbcTemplate.query(queryString, new BeanPropertyRowMapper<Employee>(Employee.class));
+		return list;
 	}
-
 }

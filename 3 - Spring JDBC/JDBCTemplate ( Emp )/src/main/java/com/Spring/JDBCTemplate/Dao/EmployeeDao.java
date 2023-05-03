@@ -7,8 +7,8 @@ import com.Spring.JDBCTemplate.entity.Employee;
 public interface EmployeeDao {
 	
 	public int insertEmployee(Employee emp);
-	public int deleteEmployee(int empId);
-	public int updateEmployee(int empId);
+	public int deleteEmployee(String empId);
+	public int updateEmployee(Employee emp);
 	public Employee getEmployee(int id);
 	public List<Employee> getEmployeeRecords();
 
