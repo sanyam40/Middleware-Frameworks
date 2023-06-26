@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLef.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Iteration in list</h1>
+
+    <h1 th:text="${list}"></h1>
+
+    <!-- iterated list -->
+    <ul>
+        <li th:each="n,status:${list}">
+            <span th:text="${status.index}+' '+${n}"></span>
+        </li>
+    </ul>
+
+     <!-- conditional operator -->
+     <!-- elivis operator -->
+    <h1>using elivis operator <span th:text="${bool}?'HELLO':'HI'"></span></h1>
+
+    <!-- if unless -->
+    <h1 th:if="${bool}=='true'">hello</h1>
+    <h1 th:unless="${bool}=='true'">hi</h1>
+
+</body>
+</html>

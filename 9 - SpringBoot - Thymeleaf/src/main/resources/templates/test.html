@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLef.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello ji</h1>
+    
+    <h2 th:text="${name}"/>
+
+    <h2 th:text="'value is '+${name}"/>
+
+    <div th:with="a=6">
+        <h2 th:text="${a}"/>
+    </div>
+
+    <a href="list">LIST</a>
+    <a href="fragments">fragments</a>
+    <a href="inhertance">inhertance</a>
+
+</body>
+</html>

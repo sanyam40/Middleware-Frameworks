@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLef.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <footer id="fragmentTag" th:fragment="footer1(title)">
+
+        <div class="container-fluid bg-dark text-light">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 th:text="${title}"></h2>
+                    <h1>Footer</h1>
+                    <h2>hello</h2>
+                </div>
+            </div>
+
+    </footer>
+</body>
+</html>
