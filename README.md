@@ -8,6 +8,6 @@ Topics Covered are :
 - Spring JPA ( Java Persistence API )
 - Hibernate ORM ( Object-relational mapping )
 - Spring AOP ( Aspect Oriented Programming )
-- Spring Boot JPA
+- Spring Boot MVC & JPA
 - Spring Boot Rest API
 - Spring Boot Thymeleaf ( Java template engine )
