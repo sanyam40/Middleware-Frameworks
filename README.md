@@ -1,6 +1,6 @@
 # SPRING FRAMEWORK
 
-This repository contains a codebase for all the topics covered in the Spring Framework.
+This repository contains a codebase for all the topics covered in the Spring & Spring Boot Framework.
 Topics Covered are :
 - Spring Core
 - Spring MVC 
@@ -8,3 +8,6 @@ Topics Covered are :
 - Spring JPA ( Java Persistence API )
 - Hibernate ORM ( Object-relational mapping )
 - Spring AOP ( Aspect Oriented Programming )
+- Spring Boot JPA
+- Spring Boot Rest API
+- Spring Boot Thymeleaf ( Java template engine )
