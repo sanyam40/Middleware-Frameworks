@@ -1,7 +1,7 @@
 # SPRING FRAMEWORK
 
 This repository contains a codebase for all the topics covered in the Spring & Spring Boot Framework.
-Topics Covered are :
+Topics Covered are:
 - Spring Core
 - Spring MVC 
 - Spring JDBC ( JdbcTemplate )
