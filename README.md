@@ -1,6 +1,6 @@
 # SPRING FRAMEWORK
 
-This repository contains a codebase for all the topics covered in the Spring & Spring Boot Framework.
+This repository contains a codebase for the Important topics covered in the Spring & Spring Boot Framework.
 Topics Covered are:
 - Spring Core
 - Spring MVC 
@@ -11,3 +11,4 @@ Topics Covered are:
 - Spring Boot MVC & JPA
 - Spring Boot Rest API
 - Spring Boot Thymeleaf ( Java template engine )
+- Spring Boot Security ( With JWT Authentication )
