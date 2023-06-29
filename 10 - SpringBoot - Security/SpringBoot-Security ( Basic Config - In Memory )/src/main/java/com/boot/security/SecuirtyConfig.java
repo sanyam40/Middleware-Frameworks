@@ -3,7 +3,7 @@ package com.boot.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,6 +13,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableWebSecurity
+//@EnableMethodSecurity
 public class SecuirtyConfig{
 	
 	@Bean
@@ -35,23 +37,26 @@ public class SecuirtyConfig{
 	@SuppressWarnings("removal")
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
-		httpSecurity.csrf().disable()
-		.authorizeHttpRequests()
+		
+		// Cross site request forgery token. we have disable it for non-browser clients.
+		httpSecurity.csrf((csrf) -> csrf.disable());
 
-		.requestMatchers("/common/**")
-		.permitAll()
-		
-		.requestMatchers("/admin/**")
-		.hasRole("ADMIN")
-		
-		.requestMatchers("/normal/**")
-		.hasRole("NORMAL")
-		
-		.anyRequest()
-		.authenticated()
-		.and()
+		httpSecurity.authorizeHttpRequests((authorizeHttpRequests) ->
+			authorizeHttpRequests
+			
+			.requestMatchers("/common/**")
+			.permitAll()
+			
+			.requestMatchers("/admin/**")
+			.hasRole("ADMIN")
+			
+			.requestMatchers("/normal/**")
+			.hasRole("NORMAL")
+				
+		)
+//		.httpBasic() // for prompt based login system 
 		.formLogin();
-		
+
 		return httpSecurity.build();
 	}
 }

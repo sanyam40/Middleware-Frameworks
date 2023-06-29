@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NormalController {
 
 	@RequestMapping("/method")
+//	@PreAuthorize("hasRole('NORMAL')")
 	public String normal() {
 		return "normal";
 	}
