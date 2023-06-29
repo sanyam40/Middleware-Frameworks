@@ -14,3 +14,7 @@ This repository contains a codebase for the Important topics covered in the Spri
 - Spring Boot Rest API
 - Spring Boot Thymeleaf ( Java template engine )
 - Spring Boot Security ( With JWT Authentication )
+
+# Projects Created 
+-  [Project Tracking Application](https://github.com/sanyam40/Project-Tracking-Application)
+-  [SneakerStore](https://github.com/sanyam40/Sneaker-Stroll)
